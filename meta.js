@@ -52,6 +52,12 @@ module.exports = {
       message: 'Select which Vue plugins to install',
       choices: ['vue-electron', 'vue-resource', 'vue-router', 'vuex'],
       default: ['vue-electron', 'vue-resource', 'vue-router', 'vuex']
+    },
+    webpackDashboard: {
+      type: 'confirm',
+      require: true,
+      default: false,
+      message: 'Use webpack-dashboard?'
     }
   },
   helpers: {

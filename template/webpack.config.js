@@ -7,6 +7,9 @@ const webpack = require('webpack')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+{{#if webpackDashboard}}
+const DashboardPlugin = require('webpack-dashboard/plugin')
+{{/if}}
 
 let config = {
   devtool: '#eval-source-map',
@@ -98,8 +101,11 @@ let config = {
   }
 }
 
-{{#if eslint}}
+/**
+ * Adjust configuration for development
+ */
 if (process.env.NODE_ENV !== 'production') {
+{{#if eslint}}
   /**
    * Apply ESLint
    */
@@ -116,9 +122,16 @@ if (process.env.NODE_ENV !== 'production') {
       }
     )
   }
+{{/if}}
+
+{{#if webpackDashboard}}
+  /**
+   * Use webpack-dashboard
+   */
+  config.plugins.push(new DashboardPlugin())
+{{/if}}
 }
 
-{{/if}}
 /**
  * Adjust config for production settings
  */
