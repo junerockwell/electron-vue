@@ -22,7 +22,7 @@ module.exports = {
     plugins: {
       type: 'checkbox',
       message: 'Select which Vue plugins to install',
-      choices: ['vue-electron', 'vue-resource', 'vue-router', 'vuex'],
+      choices: ['vue-electron', 'vue-resource', 'vue-router', 'vuex', 'vuex-router-sync'],
       default: ['vue-electron', 'vue-resource', 'vue-router', 'vuex']
     },
     eslint: {
@@ -65,7 +65,8 @@ module.exports = {
         'vue-electron': '^1.0.0',
         'vue-resource': '^1.0.3',
         'vue-router': version === '2.x' ? '^2.0.0' : '^0.7.13',
-        'vuex': version === '2.x' ? '^2.0.0' : '^1.0.0'
+        'vuex': version === '2.x' ? '^2.0.0' : '^1.0.0',
+        'vuex-router-sync': version === '2.x' ? '^3.0.0' : '^2.1.1'
       }
 
       if (Object.keys(plugins).length > 0) output += ',\n'
