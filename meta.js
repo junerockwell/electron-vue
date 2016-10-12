@@ -23,7 +23,7 @@ module.exports = {
       type: 'checkbox',
       message: 'Select which Vue plugins to install',
       choices: ['vue-electron', 'vue-resource', 'vue-router', 'vuex', 'vuex-router-sync'],
-      default: ['vue-electron', 'vue-resource', 'vue-router', 'vuex']
+      default: ['vue-electron', 'vue-resource', 'vue-router', 'vuex', 'vuex-router-sync']
     },
     eslint: {
       type: 'confirm',
