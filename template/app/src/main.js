@@ -6,10 +6,9 @@ import Electron from 'vue-electron'
 import Resource from 'vue-resource'
 {{/isEnabled}}
 {{#isEnabled plugins 'vue-router'}}
-import Router from 'vue-router'
 
 import App from './App'
-import routes from './routes'
+import router from './router'
 {{/isEnabled}}
 
 {{#isEnabled plugins 'vue-electron'}}
@@ -17,9 +16,6 @@ Vue.use(Electron)
 {{/isEnabled}}
 {{#isEnabled plugins 'vue-resource'}}
 Vue.use(Resource)
-{{/isEnabled}}
-{{#isEnabled plugins 'vue-router'}}
-Vue.use(Router)
 {{/isEnabled}}
 Vue.config.debug = true
 
@@ -54,6 +50,7 @@ import App from './App'
 /* eslint-disable no-new */
 {{#if_eq vueVersion '2.x'}}
 new Vue({
+  router,
   ...App
 }).$mount('#app')
 {{else}}
