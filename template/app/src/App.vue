@@ -1,7 +1,7 @@
 <template>
   <div>
     {{#isEnabled plugins 'vue-router'}}
-    <router-view></router-view>
+    <keep-alive><router-view></router-view></keep-alive>
     {{else}}
     <landing-page></landing-page>
     {{/isEnabled}}
