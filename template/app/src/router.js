@@ -1,3 +1,4 @@
+/* These are all version 2.x. No version 1.x */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
