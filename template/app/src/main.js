@@ -6,13 +6,11 @@ import Resource from 'vue-resource'
 
 import router from './router'
 
-
-
 Vue.use(Electron)
-{{/isEnabled}}
 {{#isEnabled plugins 'vue-resource'}}
 Vue.use(Resource)
 {{/isEnabled}}
+
 Vue.config.debug = true
 
 /* eslint-disable no-new */
