@@ -20,28 +20,12 @@ Vue.use(Resource)
 Vue.config.debug = true
 
 {{#isEnabled plugins 'vue-router'}}
-{{#if_eq vueVersion '2.x'}}
-const router = new Router({
-  scrollBehavior: () => ({ y: 0 }),
-  routes
-})
-
 /* eslint-disable no-new */
 new Vue({
   router,
   ...App
 }).$mount('#app')
 {{else}}
-const router = new Router()
-
-router.map(routes)
-router.beforeEach(() => {
-  window.scrollTo(0, 0)
-})
-router.redirect({
-  '*': '/'
-})
-
 router.start(App, 'app')
 {{/if_eq}}
 {{else}}
